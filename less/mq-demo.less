@@ -1,0 +1,36 @@
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1128px)";
+@desktop-xl:  ~"only screen and (min-width: 1129px)";
+
+
+body {
+    &:after { /*This adds a label in the top-left corner that displays the current media query state.*/
+    background: red;
+    color: @white;
+    content: "undefined";
+    left: 0;
+    padding: .5em 1em;
+    position: absolute;
+    position:fixed;
+    text-align: center;
+    top: 0;
+    z-index: 99;
+    @media @mobile {
+      background: orange;
+      content: "mobile";
+    }
+    @media @tablet {
+      background: purple;
+      content: "tablet";
+    }
+    @media @desktop {
+      background: green;
+      content: "desktop";
+    }
+    @media @desktop-xl {
+      background: blue;
+      content: "desktop-xl";
+    }
+  }
+}

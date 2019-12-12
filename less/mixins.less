@@ -1,8 +1,83 @@
 // Mixins in here
 
+
+// displays flex on container and takes variables for flex-direction justify-content and align-items
+.trans(@element:all,@time:300ms,@ease:ease){
+    transition: @element @time @ease;
+}
+
+
 .flexing(@direction,@justify,@align){
     display:flex;
     flex-direction: @direction;
     justify-content: @justify;
     align-items: @align;
 }
+
+.btn__primary(@width:90%, @bg-color,@font-color,@font-size, @b-radius:2rem){
+    background-color: @bg-color;
+    border-radius:@b-radius;
+    color:@font-color;
+    font-size:@font-size;
+    .flexing(row,center,center);
+    padding:(@font-size*.3) 0;
+    width:@width;
+    &:hover{
+        .trans(all,400ms, ease-in-out);
+        background-color: darken(@bg-color, 15%);
+        color: darken(@font-color, 10%);
+
+    }
+   
+}
+
+// Media query map
+
+@sizes: {
+    mobile :500px;
+    tablet: 800px;
+    desktop: 1024px;
+}
+// mixin for media call
+
+
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1128px)";
+@desktop-xl:  ~"only screen and (min-width: 1129px)";
+
+
+body {
+    &:after { /*This adds a label in the top-left corner that displays the current media query state.*/
+    background: red;
+    color: @white;
+    content: "undefined";
+    left: 0;
+    padding: .5em 1em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    z-index: 99;
+    @media @mobile {
+      background: orange;
+      content: "mobile";
+    }
+    @media @tablet {
+      background: purple;
+      content: "tablet";
+    }
+    @media @desktop {
+      background: green;
+      content: "desktop";
+    }
+    @media @desktop-xl {
+      background: blue;
+      content: "desktop-xl";
+    }
+  }
+}
+
