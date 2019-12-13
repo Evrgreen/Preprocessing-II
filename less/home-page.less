@@ -1,3 +1,5 @@
+
+// header section 
 .header{
   display:flex;
   flex-direction:column;
@@ -8,7 +10,6 @@
 
 
 .header-main{
-  border-top: grey dashed 3px;
   display:flex;
   flex-direction:column;
     align-items:center;
@@ -17,34 +18,44 @@
 
 
   &__img{
-    background-color:red;
-
     display:flex;
     justify-content:center;
   }
+   
+
 
   &__text{
-    border-bottom: grey dashed 3px;
-    
+    border-bottom:3px dashed grey;
     letter-spacing: .2rem;
-  
     padding-bottom:3rem;
-   
     max-width:100%;
   }
+    
+    
+  
+   
   &__title{
+    
     margin:2% 0;
   }
 }
-
+.line__break{
+  border-top: 3px dashed grey;
+  position:relative;
+    left:-50%;
+  width:300%;
+}
 
 
 .home {
+  @media @desktop-xl{
+    width:100%;
+  }
   @media @mobile{
-    
     margin:0 5%;
     width:90%;
   }
+    
 
 
 
@@ -110,7 +121,7 @@
       padding-left: 0;
     }
   }
-
+//  content-destionation block 
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
@@ -133,7 +144,7 @@
       flex-direction: column;
       align-items: center;
     }
-
+// destination field 
     .destination {
       width: 30%;
       margin-bottom: 30px;
@@ -143,9 +154,9 @@
     }
   }
 
-
+// button styles
   .btn{
-      .btn__primary(90%,teal, white,3rem);
+      .btn__primary(90%,@eastern-blue, @sandy-beach,3rem);
   }
   
 }// home

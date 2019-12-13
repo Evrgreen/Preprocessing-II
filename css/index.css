@@ -1,39 +1,4 @@
-body:after {
-  /*This adds a label in the top-left corner that displays the current media query state.*/
-  background: red;
-  color: #FFFFFF;
-  content: "undefined";
-  left: 0;
-  padding: 0.5em 1em;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  z-index: 99;
-}
-@media only screen and (max-width: 529px) {
-  body:after {
-    background: orange;
-    content: "mobile";
-  }
-}
-@media only screen and (min-width: 530px) and (max-width: 949px) {
-  body:after {
-    background: purple;
-    content: "tablet";
-  }
-}
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
-  body:after {
-    background: green;
-    content: "desktop";
-  }
-}
-@media only screen and (min-width: 1129px) {
-  body:after {
-    background: blue;
-    content: "desktop-xl";
-  }
-}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -268,25 +233,34 @@ img {
   align-items: center;
 }
 .header-main {
-  border-top: grey dashed 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: 800;
 }
 .header-main__img {
-  background-color: red;
   display: flex;
   justify-content: center;
 }
 .header-main__text {
-  border-bottom: grey dashed 3px;
+  border-bottom: 3px dashed grey;
   letter-spacing: 0.2rem;
   padding-bottom: 3rem;
   max-width: 100%;
 }
 .header-main__title {
   margin: 2% 0;
+}
+.line__break {
+  border-top: 3px dashed grey;
+  position: relative;
+  left: -50%;
+  width: 300%;
+}
+@media only screen and (min-width: 1129px) {
+  .home {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 529px) {
   .home {
@@ -381,9 +355,9 @@ img {
   }
 }
 .home .btn {
-  background-color: teal;
+  background-color: #17A2B8;
   border-radius: 2rem;
-  color: white;
+  color: #FFEBCD;
   font-size: 3rem;
   display: flex;
   flex-direction: row;
@@ -394,43 +368,44 @@ img {
 }
 .home .btn:hover {
   transition: all 400ms ease-in-out;
-  background-color: #003334;
-  color: #e6e6e6;
+  background-color: #0f6674;
+  color: #ffd79a;
 }
-body:after {
-  /*This adds a label in the top-left corner that displays the current media query state.*/
-  background: red;
+body::before {
+  background: #ff0000;
   color: #FFFFFF;
-  content: "undefined";
-  left: 0;
-  padding: 0.5em 1em;
+  content: " ";
+  font-size: 2rem;
+  padding: 3rem 2em;
   position: absolute;
   position: fixed;
-  text-align: center;
+  left: 0;
   top: 0;
+  text-align: center;
   z-index: 99;
 }
 @media only screen and (max-width: 529px) {
-  body:after {
-    background: orange;
+  body::before {
+    background: #ff53b7;
     content: "mobile";
+    padding: 0;
   }
 }
 @media only screen and (min-width: 530px) and (max-width: 949px) {
-  body:after {
-    background: purple;
+  body::before {
+    background: #33aa56;
     content: "tablet";
   }
 }
 @media only screen and (min-width: 950px) and (max-width: 1128px) {
-  body:after {
-    background: green;
+  body::before {
+    background: #83b2fa;
     content: "desktop";
   }
 }
 @media only screen and (min-width: 1129px) {
-  body:after {
-    background: blue;
+  body::before {
+    background: #ff8a04;
     content: "desktop-xl";
   }
 }
