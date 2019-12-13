@@ -1,1 +1,42 @@
 // Navigation Styles here
+
+.nav{
+    .flexing(row,space-between,center);
+    height:7rem;
+    width:100%;
+    @media @mobile{
+        .flexing(column,center,center);
+    }
+
+    &__logo{
+        width:20%;
+        @media @mobile{
+            display:block;
+            width:100%;
+            text-align:center;
+        }
+    }
+   
+    
+    &__list{
+        align-self:center;
+        height:auto;
+        .flexing(row, space-between, center);
+        width:40%;
+        max-width:60%;
+        @media @mobile{
+            
+            width:100%;
+            max-width:100%;
+            justify-content:space-between;
+        }
+       
+    }
+
+    &__items{
+        
+        font-size:1.8rem;
+        
+        max-width:25%
+    }
+}
